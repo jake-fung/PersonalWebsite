@@ -1,7 +1,7 @@
 import SplitText from "@/components/SplitText.tsx";
 import RotatingText from "@/components/RotatingText.tsx";
 import Particles from "@/components/Particles.tsx";
-import { LinkedInLogoIcon } from "@radix-ui/react-icons";
+import { LinkedInLogoIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 
 function Home() {
   const connectOnClick = () => {
@@ -15,6 +15,18 @@ function Home() {
       );
     }
   };
+
+    const githubOnClick = () => {
+      const githubUrl = "https://github.com/jake-fung";
+      const newWindow = window.open(githubUrl, "_blank", "noopener,noreferrer");
+      if (newWindow) {
+        newWindow.opener = null; // Prevents the new page from accessing the opener
+      } else {
+        console.error(
+            "Failed to open new window. Please allow pop-ups for this site.",
+        );
+      }
+    }
 
   const resumeOnClick = () => {
     const resumeUrl = "https://drive.google.com/file/d/1kjTseNDU-sHKJhHGmgYU86pGnAAe6BSg/view?usp=sharing";
@@ -73,7 +85,7 @@ function Home() {
             <div className="z-10 flex flex-row items-center justify-center gap-4 pt-4">
               <button
                 className={
-                  "bg-linkedin hover:bg-linkedin-hover flex flex-row rounded-xl px-8 py-3 font-extrabold text-white transition-all duration-200 ease-in-out hover:-translate-y-0.5"
+                  "animate-fade-in-up-delay bg-linkedin hover:bg-linkedin-hover transition-all duration-200 ease-in-out hover:-translate-y-0.5"
                 }
                 onClick={connectOnClick}
               >
@@ -82,17 +94,26 @@ function Home() {
               </button>
               <button
                   className={
-                    "bg-gray-800 hover:bg-gray-900 flex flex-row rounded-xl px-10 py-3 font-extrabold text-white transition-all duration-200 ease-in-out hover:-translate-y-0.5"
+                    "animate-fade-in-up-delay bg-github hover:bg-github-hover transition-all duration-200 ease-in-out hover:-translate-y-0.5"
+                  }
+                  onClick={githubOnClick}
+              >
+                <GitHubLogoIcon className={"my-1 mr-2 scale-150"} />
+                GitHub
+              </button>
+              <button
+                  className={
+                    "animate-fade-in-up-delay bg-gray-800 hover:bg-gray-900 transition-all duration-200 ease-in-out hover:-translate-y-0.5"
                   }
                   onClick={resumeOnClick}
               >
-                  Resume
+                  Resumé
               </button>
             </div>
           </div>
           <img
             src="/src/assets/avatar.jpg"
-            className={"animate-fade-in-scale z-10 h-96 rounded-full transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:shadow-md hover:shadow-gray-500"}
+            className={"border-2 p-1 border-white animate-fade-in-scale z-10 h-96 rounded-full transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:shadow-lg hover:shadow-white/30"}
             alt={"avatar"}
           />
         </div>
