@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -46,26 +48,13 @@ button {
   color: white;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
 @theme {
   --animate-fade-in-scale: fade-in-scale 1s ease-out;
   --animate-fade-in-up-delay: fade-in-up-delay 2s ease-out;
   --color-linkedin: #0072b1;
   --color-linkedin-hover: #006293;
   --color-github: #24292e;
-    --color-github-hover: #161b22;
+  --color-github-hover: #161b22;
 
   @keyframes fade-in-scale {
     0% {
