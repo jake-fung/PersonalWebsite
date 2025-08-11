@@ -1,0 +1,28 @@
+{
+  "name": "node_quickstart",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongodb",
+    "database",
+    "personal-projects",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "Express API server for personal projects with MongoDB",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^5.1.0",
+    "mongodb": "6.18"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

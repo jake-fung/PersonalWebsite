@@ -1,5 +1,5 @@
-import Particles from "@/components/Particles";
-import FuzzyText from "@/components/FuzzyText";
+import Particles from "../components/ui/Particles.tsx";
+import FuzzyText from "../components/ui/FuzzyText.tsx";
 
 const NotFound = () => {
   return (

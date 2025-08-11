@@ -1,8 +1,9 @@
-import SplitText from "@/components/SplitText";
-import RotatingText from "@/components/RotatingText";
-import Particles from "@/components/Particles";
-import Magnet from "@/components/Magnet";
-import Switch from "@/components/Switch";
+import SplitText from "../components/ui/SplitText.tsx";
+import RotatingText from "../components/ui/RotatingText.tsx";
+import Particles from "../components/ui/Particles.tsx";
+import Magnet from "../components/ui/Magnet.tsx";
+import Switch from "../components/ui/Switch.tsx";
+import MainMenu from "../components/MainMenu.tsx";
 import {
   LinkedInLogoIcon,
   GitHubLogoIcon,
@@ -23,6 +24,18 @@ const openInNewTab = (url: string) => {
 const Home = () => {
   return (
     <>
+      <section id="background" className="fixed top-0 left-0 h-full w-full overflow-hidden">
+        <Particles
+            particleColors={["#000000", "#ffffff"]}
+            particleCount={500}
+            particleSpread={10}
+            speed={0.1}
+            particleBaseSize={150}
+            moveParticlesOnHover={false}
+            alphaParticles={true}
+            disableRotation={false}
+        />
+      </section>
       <section
         id="header"
         className="top-0 left-0 min-h-full w-full overflow-hidden bg-black/90 transition-all duration-300 ease-in-out dark:bg-white/90"
@@ -90,24 +103,13 @@ const Home = () => {
             </div>
           </div>
           <img
-            src="/src/assets/avatar.jpg"
+            src="src/assets/avatar.jpg"
             className="animate-fade-in-scale z-10 h-96 rounded-full border-8 border-white p-2 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:shadow-lg hover:shadow-white/30 dark:border-black dark:hover:shadow-black/30"
             alt="avatar"
           />
         </div>
-        <div className="fixed top-0 left-0 h-full w-full overflow-hidden">
-          <Particles
-            particleColors={["#000000", "#ffffff"]}
-            particleCount={500}
-            particleSpread={10}
-            speed={0.1}
-            particleBaseSize={150}
-            moveParticlesOnHover={false}
-            alphaParticles={true}
-            disableRotation={false}
-          />
-        </div>
       </section>
+      <MainMenu />
       <section
         id="footer"
         className="flex h-24 w-full items-center justify-center bg-black/90 text-white transition-all duration-300 ease-in-out dark:bg-white/90"
