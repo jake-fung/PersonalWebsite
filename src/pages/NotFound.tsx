@@ -17,10 +17,10 @@ const NotFound = () => {
             disableRotation={false}
           />
         </div>
-        <div className="flex h-screen w-screen flex-col items-center justify-center">
+        <div className="relative z-10 flex h-screen w-screen flex-col items-center justify-center">
           <FuzzyText
             baseIntensity={0.2}
-            hoverIntensity={0.5}
+            hoverIntensity={1.0}
             enableHover={true}
             fontFamily="Times New Roman"
             fontWeight={900}
